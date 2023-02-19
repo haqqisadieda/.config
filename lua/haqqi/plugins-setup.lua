@@ -38,6 +38,8 @@ return packer.startup(function(use)
 		requires = { "tjdevries/colorbuddy.nvim" },
 	}) -- preferred colorscheme
 
+	use("christoomey/vim-tmux-navigator")
+
 	use("szw/vim-maximizer") -- maximizes and restores current window
 
 	-- essential plugins
@@ -104,6 +106,13 @@ return packer.startup(function(use)
 	-- golang lsp
 	use("ray-x/go.nvim")
 	use("ray-x/guihua.lua")
+
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+
+	use("akinsho/nvim-bufferline.lua")
 
 	if packer_bootstrap then
 		require("packer").sync()
